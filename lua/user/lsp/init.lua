@@ -21,8 +21,12 @@ mason.setup()
 mason_config.setup()
 
 require "user.lsp.lsp-installer"
+
 require("user.lsp.handlers").setup()
+
 require "user.lsp.null-ls"
+
+require "user.lsp.formatter"
 
 vim.diagnostic.config({
   virtual_text = true

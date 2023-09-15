@@ -40,6 +40,8 @@ local mason_packages = {
   "php-debug-adapter",
   "php-cs-fixer",
   "prettier",
+  "blade-formatter",
+  "google-java-format"
 }
 
 local settings = {
@@ -141,9 +143,16 @@ for _, server in pairs(servers) do
 
   if server == "powershell_es" then
     local powershell_opts = {
-      filetype = { "ps1" },
+      filetypes = { "ps1" },
     }
     opts = vim.tbl_deep_extend("force", powershell_opts, opts)
+  end
+
+  if server == "intelephense" then
+    local intelephense_opts = {
+      filetypes = { "php", "blade", "blade.php" },
+    }
+    opts = vim.tbl_deep_extend("force", intelephense_opts, opts)
   end
 
   -- if server == "jdtls" then

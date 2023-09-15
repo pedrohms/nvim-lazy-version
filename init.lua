@@ -6,6 +6,5 @@ require "user.utils.plugin.lualine"
 require "user.utils.plugin.nvim-tree"
 require "user.utils.plugin.project"
 require "user.utils.plugin.surround"
-require "user.utils.plugin.toggleterm"
 require "user.utils.plugin.treesitter"
 

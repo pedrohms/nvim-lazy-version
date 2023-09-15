@@ -1,12 +1,12 @@
--- local onedarker_ok, onedarker  = pcall(require, "onedarker")
--- if onedarker_ok then
---   onedarker.setup({
---     transparent = true
---   })
---   onedarker.load()
--- else
-vim.cmd [[ colorscheme catppuccin ]]
--- end
+local catppuccin_ok, catppuccin  = pcall(require, "catppuccin")
+if catppuccin_ok then
+  catppuccin.setup({
+    transparent = true
+  })
+  catppuccin.load()
+else
+  vim.cmd [[ colorscheme catppuccin ]]
+end
 
 local status_ok, comment = pcall(require, "Comment")
 if status_ok then

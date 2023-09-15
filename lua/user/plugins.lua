@@ -52,41 +52,26 @@ if not status_ok then
 end
 
 return lazy.setup({
-  -- Colorschemes
-  { "folke/tokyonight.nvim" },
-  { "lunarvim/colorschemes"   },
-  { "ziontee113/color-picker.nvim" },
-  -- use "roobert/tailwindcss-colorizer-cmp.nvim"
+  { "lunarvim/colorschemes" },
   { "NvChad/nvim-colorizer.lua" },
-  { "lunarvim/darkplus.nvim" },
-  { "rose-pine/neovim" },
-  { "ellisonleao/gruvbox.nvim" },
-  { "arcticicestudio/nord-vim" },
   { "nvim-telescope/telescope.nvim" },
   { "nvim-lua/plenary.nvim" },
-  { "nvim-treesitter/nvim-treesitter"},
-  { "nvim-lua/popup.nvim" },
-  { "pedrohms/impatient.nvim" },
-  -- All the things
+  { "nvim-treesitter/nvim-treesitter" },
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
   { "neovim/nvim-lspconfig" },
-  { "onsails/lspkind-nvim" },
   { "pedrohms/lsp_extensions.nvim" },
   { "ray-x/lsp_signature.nvim" },
-  { "lvimuser/lsp-inlayhints.nvim" },
   { "hrsh7th/cmp-nvim-lsp" },
   { "hrsh7th/cmp-buffer" },
-  { "hrsh7th/nvim-cmp"},
-  { "glepnir/lspsaga.nvim" },
-  { "akinsho/flutter-tools.nvim" },
-  { "simrat39/symbols-outline.nvim" },
+  { "hrsh7th/nvim-cmp" },
   { "saadparwaiz1/cmp_luasnip" },
   { "goolord/alpha-nvim" },
   { "tom-anders/telescope-vim-bookmarks.nvim" },
   { "MattesGroeger/vim-bookmarks" },
   { "kyazdani42/nvim-tree.lua" },
-  { "ahmedkhalf/project.nvim",
+  {
+    "ahmedkhalf/project.nvim",
     config = function()
       require("project_nvim").setup {
       }
@@ -98,52 +83,101 @@ return lazy.setup({
       require("Comment").setup()
     end
   },
-  { "akinsho/bufferline.nvim" },
   { "SmiteshP/nvim-navic" },
-  { "nvim-lualine/lualine.nvim", },
-  { "akinsho/toggleterm.nvim" },
-  { "tamago324/nlsp-settings.nvim" },       -- language server settings defined in json for
-  { "jose-elias-alvarez/null-ls.nvim" },    -- for formatters and linters
-  { "lukas-reineke/indent-blankline.nvim" },
-  -- use({ "pedrohms/surround.nvim", commit = "master" })
-  { "windwp/nvim-ts-autotag" },
-  { "windwp/nvim-autopairs" },
-  { "tpope/vim-surround" },
   { "mfussenegger/nvim-jdtls" },
   { "moll/vim-bbye" },
-  
   -- snippets
-  -- use({ "rafamadriz/friendly-snippets" })    -- a bunch of snippets to use
   { "L3MON4D3/LuaSnip" },
-  { "ThePrimeagen/harpoon" },
-
   -- DAP
   { "mfussenegger/nvim-dap" },
   { "theHamsta/nvim-dap-virtual-text" },
   { "rcarriga/nvim-dap-ui" },
   { "pedrohms/dap-install" },
   { "rcarriga/cmp-dap" },
-
+  -- END OF DAP
+  --
   { "rcarriga/nvim-notify" },
+  { "catppuccin/nvim",              as = "catppuccin" },
+  { "kyazdani42/nvim-web-devicons"},
+  { "nvim-lualine/lualine.nvim", },
+  -- Colorschemes
+  -- { "folke/tokyonight.nvim" },
+  -- { "ziontee113/color-picker.nvim" },
+  -- use "roobert/tailwindcss-colorizer-cmp.nvim"
+  -- { "lunarvim/darkplus.nvim" },
+  -- { "rose-pine/neovim" },
+  -- { "ellisonleao/gruvbox.nvim" },
+  -- { "arcticicestudio/nord-vim" },
+  -- { "nvim-lua/popup.nvim" },
+  -- { "pedrohms/impatient.nvim" },
+  -- All the things
+  -- { "onsails/lspkind-nvim" },
+  -- { "lvimuser/lsp-inlayhints.nvim" },
+  -- { "glepnir/lspsaga.nvim" },
+  -- { "akinsho/flutter-tools.nvim" },
+  -- { "simrat39/symbols-outline.nvim" },
+  -- { "akinsho/bufferline.nvim" },
+  -- { "akinsho/toggleterm.nvim" },
+  -- { "tamago324/nlsp-settings.nvim" },    -- language server settings defined in json for
+  -- { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters
+  -- { "mhartington/formatter.nvim" },
+  -- { "lukas-reineke/indent-blankline.nvim" },
+  -- use({ "pedrohms/surround.nvim", commit = "master" })
+  -- { "windwp/nvim-ts-autotag" },
+  -- { "windwp/nvim-autopairs" },
+  -- { "tpope/vim-surround" },
+
+  -- snippets
+  -- use({ "rafamadriz/friendly-snippets" })    -- a bunch of snippets to use
+  -- { "ThePrimeagen/harpoon" },
+
 
   -- { "lewis6991/gitsigns.nvim" },
   -- { "mattn/vim-gist" },
   -- { "mattn/webapi-vim" },
-  { "tpope/vim-fugitive" },
+  -- { "tpope/vim-fugitive" },
   -- { "ThePrimeagen/git-worktree.nvim" },
   -- { "TimUntersberger/neogit" },
   -- { "sindrets/diffview.nvim" },
-  { "RRethy/vim-illuminate" },
-  { "stevearc/dressing.nvim" },
-  { "nacro90/numb.nvim" },
-  { "windwp/nvim-spectre" },
-  { "jinh0/eyeliner.nvim",
-    config = function()
-      require("eyeliner").setup {
-        highlight_on_key = true,
-      }
-    end },
+  -- { "RRethy/vim-illuminate" },
+  -- { "stevearc/dressing.nvim" },
+  -- { "nacro90/numb.nvim" },
+  -- { "windwp/nvim-spectre" },
+  -- {
+  --   "jinh0/eyeliner.nvim",
+  --   config = function()
+  --     require("eyeliner").setup {
+  --       highlight_on_key = true,
+  --     }
+  --   end
+  -- },
   -- use({ "xiyaowong/transparent.nvim" })
-  { "catppuccin/nvim", as = "catppuccin" },
-  { "kyazdani42/nvim-web-devicons", opt = true }
+  -- {
+  --   "adalessa/laravel.nvim",
+  --   dependencies = {
+  --     "nvim-telescope/telescope.nvim",
+  --     "tpope/vim-dotenv",
+  --     "MunifTanjim/nui.nvim",
+  --   },
+  --   cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
+  --   keys = {
+  --     { "<leader>la", ":Laravel artisan<cr>" },
+  --     { "<leader>lr", ":Laravel routes<cr>" },
+  --     { "<leader>lm", ":Laravel related<cr>" },
+  --     {
+  --       "<leader>lt",
+  --       function()
+  --         require("laravel.tinker").send_to_tinker()
+  --       end,
+  --       mode = "v",
+  --       desc = "Laravel Application Routes",
+  --     },
+  --   },
+  --   event = { "VeryLazy" },
+  --   config = function()
+  --     require("laravel").setup()
+  --     require("telescope").load_extension "laravel"
+  --   end,
+  -- },
+  -- {"jwalton512/vim-blade"}
 })

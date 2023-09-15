@@ -1,3 +1,8 @@
+local terminal_ok, terminal = pcall(require, "toggleterm")
+if not terminal_ok then
+  return
+end
+
 local M = {}
 
 local localshell = "fish"
@@ -18,14 +23,14 @@ M.config = function()
     hide_numbers = true, -- hide the number column in toggleterm buffers
     shade_filetypes = {},
     shade_terminals = true,
-    shading_factor = 2, -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
+    shading_factor = 2,     -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
     start_in_insert = true,
     insert_mappings = true, -- whether or not the open mapping applies in insert mode
     persist_size = false,
     -- direction = 'vertical' | 'horizontal' | 'window' | 'float',
     direction = "float",
     close_on_exit = true, -- close the terminal window when the process exits
-    shell = localshell, -- change the default shell
+    shell = localshell,   -- change the default shell
     -- This field is only relevant if direction is set to 'float'
     float_opts = {
       -- The border key is *almost* the same as 'nvim_win_open'
@@ -47,33 +52,34 @@ M.config = function()
     -- lvim.builtin.terminal.execs = {{}} to overwrite
     -- lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs+1] = {"gdb", "tg", "GNU Debugger"}
     execs = {
-      { "lazygit", "<leader>gg", "LazyGit", "float" },
+      { "lazygit", "<leader>gg",  "LazyGit", "float" },
       { "lazygit", "<c-\\><c-g>", "LazyGit", "float" },
     },
   }
 end
 
 M.setup = function()
-  local terminal = require "toggleterm"
-  local term = require("user.terminal").config()
-  terminal.setup(term)
+  if terminal_ok then
+    local term = require("user.terminal").config()
+    terminal.setup(term)
 
-  for i, exec in pairs(term.execs) do
-    local opts = {
-      cmd = exec[1],
-      keymap = exec[2],
-      label = exec[3],
-      -- NOTE: unable to consistently bind id/count <= 9, see #2146
-      count = i + 100,
-      direction = exec[4] or term.direction,
-      size = term.size,
-    }
+    for i, exec in pairs(term.execs) do
+      local opts = {
+        cmd = exec[1],
+        keymap = exec[2],
+        label = exec[3],
+        -- NOTE: unable to consistently bind id/count <= 9, see #2146
+        count = i + 100,
+        direction = exec[4] or term.direction,
+        size = term.size,
+      }
 
-    M.add_exec(opts)
-  end
+      M.add_exec(opts)
+    end
 
-  if term.on_config_done then
-    term.on_config_done(terminal)
+    if term.on_config_done then
+      term.on_config_done(terminal)
+    end
   end
 end
 
@@ -92,9 +98,11 @@ M.add_exec = function(opts)
 end
 
 M._exec_toggle = function(opts)
-  local Terminal = require("toggleterm.terminal").Terminal
-  local term = Terminal:new { cmd = opts.cmd, count = opts.count, direction = opts.direction }
-  term:toggle(20, opts.direction)
+  if terminal_ok then
+    local Terminal = require("toggleterm.terminal").Terminal
+    local term = Terminal:new { cmd = opts.cmd, count = opts.count, direction = opts.direction }
+    term:toggle(20, opts.direction)
+  end
 end
 
 
