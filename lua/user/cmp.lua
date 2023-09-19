@@ -162,4 +162,7 @@ cmp.setup({
   experimental = {
     ghost_text = true,
   },
+  completion = {
+    completeopt = "menu,menuone,preview,noselect",
+  },
 })

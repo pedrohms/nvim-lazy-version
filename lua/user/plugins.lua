@@ -98,8 +98,12 @@ return lazy.setup({
   --
   { "rcarriga/nvim-notify" },
   { "catppuccin/nvim",              as = "catppuccin" },
-  { "kyazdani42/nvim-web-devicons"},
+  -- { "kyazdani42/nvim-web-devicons"},
+  { "nvim-tree/nvim-web-devicons" },
   { "nvim-lualine/lualine.nvim", },
+
+  { "lewis6991/gitsigns.nvim" },
+  { "sainnhe/gruvbox-material" },
   -- Colorschemes
   -- { "folke/tokyonight.nvim" },
   -- { "ziontee113/color-picker.nvim" },
@@ -124,7 +128,7 @@ return lazy.setup({
   -- { "lukas-reineke/indent-blankline.nvim" },
   -- use({ "pedrohms/surround.nvim", commit = "master" })
   -- { "windwp/nvim-ts-autotag" },
-  -- { "windwp/nvim-autopairs" },
+  { "windwp/nvim-autopairs" },
   -- { "tpope/vim-surround" },
 
   -- snippets
@@ -132,7 +136,6 @@ return lazy.setup({
   -- { "ThePrimeagen/harpoon" },
 
 
-  -- { "lewis6991/gitsigns.nvim" },
   -- { "mattn/vim-gist" },
   -- { "mattn/webapi-vim" },
   -- { "tpope/vim-fugitive" },

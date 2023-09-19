@@ -13,7 +13,7 @@ if status_ok then
       disable = { "python", "css" },
     },
     autopairs = {
-      enable = true,
+      enable = false,
     },
     autotag = {
       enable = true,

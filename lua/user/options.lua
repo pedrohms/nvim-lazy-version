@@ -1,33 +1,32 @@
-local options = {
-  clipboard = "unnamedplus",
-  mouse = "a",
-  number = true,
-  background = "dark",
-  relativenumber = true,
-  hlsearch = true,
-  hidden = true,
-  errorbells = false,
-  tabstop = 2,
-  softtabstop = 2,
-  shiftwidth = 2,
-  expandtab = true,
-  smartindent = true,
-  smartcase = true,
-  nu = true,
-  wrap = false,
-  swapfile = false,
-  backup = false,
-  undodir = (vim.fn.stdpath "data" .. "/undodir") or nil,
-  undofile = true,
-  incsearch = true,
-  termguicolors = true,
-  scrolloff = 8,
-  signcolumn = "yes",
-  cmdheight = 1, updatetime = 50,
-  colorcolumn = "80",
-  cursorline = true,
-  fileencoding = "utf-8",
-}
+vim.opt.clipboard = "unnamedplus"
+vim.opt.mouse = "a"
+vim.opt.number = true
+vim.opt.background = "dark"
+vim.opt.relativenumber = true
+vim.opt.hlsearch = true
+vim.opt.hidden = true
+vim.opt.errorbells = false
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.smartcase = true
+vim.opt.nu = true
+vim.opt.wrap = false
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = (vim.fn.stdpath "data" .. "/undodir") or nil
+vim.opt.undofile = true
+vim.opt.incsearch = true
+vim.opt.termguicolors = true
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.cmdheight = 1
+vim.opt.updatetime = 50
+vim.opt.colorcolumn = "80"
+vim.opt.cursorline = true
+-- vim.opt.fileencoding = "utf-8"
 vim.opt.isfname:append("@-@")
 vim.opt.shortmess:append("c")
 
@@ -41,10 +40,6 @@ if os.getenv("OS") == "Windows_NT" then
   ]]
 else
   vim.o.shell = "fish"
-end
-
-for k, v in pairs(options) do
-  vim.opt[k] = v
 end
 
 vim.g.mapleader = " "
