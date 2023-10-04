@@ -113,8 +113,10 @@ for _, server in pairs(servers) do
   -- end
 
   if server == "clangd" then
-    local clang_opts = { cmd = { "clangd" } }
-    opts = vim.tbl_deep_extend("force", clang_opts, opts)
+    if os.getenv("NIX_USER_PROFILE_DIR") ~= nil then
+      local sumneko_cmd = { cmd = { os.getenv("HOME") .. "/.nix-profile/bin/clangd" } }
+      opts = vim.tbl_deep_extend("force", sumneko_cmd, opts)
+    end
   end
 
   if server == "lua_ls" then

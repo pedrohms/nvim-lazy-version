@@ -121,7 +121,7 @@ return lazy.setup({
   -- { "akinsho/flutter-tools.nvim" },
   -- { "simrat39/symbols-outline.nvim" },
   -- { "akinsho/bufferline.nvim" },
-  -- { "akinsho/toggleterm.nvim" },
+  { "akinsho/toggleterm.nvim" },
   -- { "tamago324/nlsp-settings.nvim" },    -- language server settings defined in json for
   -- { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters
   -- { "mhartington/formatter.nvim" },
@@ -142,18 +142,18 @@ return lazy.setup({
   -- { "ThePrimeagen/git-worktree.nvim" },
   -- { "TimUntersberger/neogit" },
   -- { "sindrets/diffview.nvim" },
-  -- { "RRethy/vim-illuminate" },
-  -- { "stevearc/dressing.nvim" },
+  { "RRethy/vim-illuminate" },
+  { "stevearc/dressing.nvim" },
   -- { "nacro90/numb.nvim" },
   -- { "windwp/nvim-spectre" },
-  -- {
-  --   "jinh0/eyeliner.nvim",
-  --   config = function()
-  --     require("eyeliner").setup {
-  --       highlight_on_key = true,
-  --     }
-  --   end
-  -- },
+  {
+    "jinh0/eyeliner.nvim",
+    config = function()
+      require("eyeliner").setup {
+        highlight_on_key = true,
+      }
+    end
+  },
   -- use({ "xiyaowong/transparent.nvim" })
   -- {
   --   "adalessa/laravel.nvim",

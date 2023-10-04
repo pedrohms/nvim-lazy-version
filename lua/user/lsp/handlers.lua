@@ -118,6 +118,10 @@ M.on_attach = function(client, bufnr)
     require("jdtls.dap").setup_dap_main_class_configs()
   end
 
+  if client.name == "clangd" then
+    client.server_capabilities.signatureHelpProvider = false
+  end
+
   M.capabilities = vim.lsp.protocol.make_client_capabilities()
   M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
   M.capabilities.textDocument.completion.completionItem.snippetSupport = true
