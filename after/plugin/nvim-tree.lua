@@ -2,6 +2,11 @@ local status_ok, nvimtree = pcall(require, "nvim-tree")
 if status_ok then
   nvimtree.setup({
 			auto_reload_on_write = true,
+      actions = {
+        open_file = {
+          quit_on_open = true,
+        },
+      },
 			view = {
 				width = 30,
 				side = "left",
